@@ -1,2 +1,3 @@
 # SM7331-500Pa
 Minimal sketch for reading pressure differences from a TE-Connectivity SM7331 - 500 Pa differential pressure sensor using Arduino IDE (tested in Arduino Uno and in ESP32).
+The sensor essentialy conforms to the documentation given at https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Data+Sheet%7FSM7000SM6000SM5000%7FA5%7Fpdf%7FEnglish%7FENG_DS_SM7000SM6000SM5000_A5.pdf%7F7391-BCE-S-500-000 but it differs from it in that the VDD pin was found to be the 7 (not the 5 shown in the datasheet) and the VSS (GND) was found to be the 6 (not the 4). No analog output was found. The sensor worked with a 5 V supply voltage.

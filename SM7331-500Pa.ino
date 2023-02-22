@@ -35,7 +35,7 @@ double readDpSM(int nSamples) {
       lo_byte = Wire.read(); // receive low byte as lower 8 bits (unsigned)
       hi_byte = Wire.read(); // receive high byte (signed)
       dout = (hi_byte << 8) | lo_byte; // shift high byte to be high 8 bits and completes the reading with low byte
-      dp += (SM_DP_MAX - SM_DP_MIN)/nSamples*double(dout)/SM_DFS + 0.5*(SM_DP_MAX + SM_DP_MIN); // pressure difference in Pa
+      dp += (SM_DP_MAX - SM_DP_MIN)/nSamples*double(dout)/SM_DFS;
   }
-  return(dp);
+  return(dp + 0.5*(SM_DP_MAX + SM_DP_MIN)); // pressure difference in Pa (averaged over nSamples samples)
 }
